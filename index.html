@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Student | Portfolio</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --bg-color: #0b0e14;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent-color: #00f2ff; /* Neon Cyan */
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            letter-spacing: -1px;
+        }
+
+        .nav-links button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links button:hover {
+            color: var(--accent-color);
+            text-shadow: 0 0 10px var(--accent-color);
+        }
+
+        /* Main Content Container */
+        .container {
+            margin-top: 120px;
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        /* Page Section Logic */
+        .page {
+            display: none; /* Hide pages by default */
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .active {
+            display: block; /* Show only active page */
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Aesthetic Cards */
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        h3 { color: var(--accent-color); margin-top: 0; }
+        p { line-height: 1.6; color: var(--text-secondary); }
+
+        .btn-cta {
+            background: var(--accent-color);
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .badge {
+            background: rgba(0, 242, 255, 0.1);
+            color: var(--accent-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">const student = { name: "You" };</div>
+        <div class="nav-links">
+            <button onclick="showPage('about')">About</button>
+            <button onclick="showPage('projects')">Projects</button>
+            <button onclick="showPage('resume')">Resume</button>
+            <button onclick="showPage('contact')">Contact</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <section id="about" class="page active">
+            <div class="card">
+                <h1>Future Software Engineer 👨‍💻</h1>
+                <p>Hi there! I'm a Computer Science student who is absolutely obsessed with solving problems through code. I spend my days learning new frameworks and my nights debugging logic errors.</p>
+                <span class="badge">Eager to Learn</span>
+                <span class="badge">Team Player</span>
+                <span class="badge">Coffee Driven</span>
+                <br>
+                <button class="btn-cta" onclick="showPage('projects')">View My Work</button>
+            </div>
+        </section>
+
+        <section id="projects" class="page">
+            <h1>Featured Projects 🛠️</h1>
+            <div class="card">
+                <h3>01. Personal Portfolio</h3>
+                <p>Created a sleek, single-page application using HTML, CSS, and vanilla JavaScript to showcase my journey.</p>
+                <small>Tools: HTML5, CSS3, JavaScript</small>
+            </div>
+            <div class="card">
+                <h3>02. Logic Simulator</h3>
+                <p>A small script that calculates boolean logic gates for introductory CS homework.</p>
+                <small>Tools: Python, JavaScript</small>
+            </div>
+        </section>
+
+        <section id="resume" class="page">
+            <h1>My Resume 📑</h1>
+            <div class="card">
+                <h3>Education</h3>
+                <p><strong>University of Tech</strong><br>B.S. in Computer Science<br>Expected Graduation: 2027</p>
+                <hr style="border: 0.5px solid rgba(255,255,255,0.1)">
+                <h3>Skills</h3>
+                <p>JavaScript (ES6+), CSS Grid/Flexbox, Basic Python, Git/GitHub</p>
+            </div>
+        </section>
+
+        <section id="contact" class="page">
+            <div class="card">
+                <h1>Let's Connect! ✉️</h1>
+                <p>I'm currently looking for internships or open-source projects to contribute to. Feel free to reach out!</p>
+                <p><strong>Email:</strong> yourname@student.edu</p>
+                <p><strong>GitHub:</strong> github.com/yourusername</p>
+                <p><strong>LinkedIn:</strong> linkedin.com/in/yourname</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Find all elements with the class 'page'
+            const pages = document.querySelectorAll('.page');
+            
+            // Loop through them and hide them all
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show the specific page we want
+            document.getElementById(pageId).classList.add('active');
+
+            // Optional: Scroll to top when switching pages
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+</body>
+</html>
