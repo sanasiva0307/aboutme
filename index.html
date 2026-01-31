@@ -143,6 +143,15 @@
             font-size: 0.8rem;
             border: 1px solid var(--accent-color);
         }
+
+        /* Video size for project previews */
+        .project-video {
+            width: 320px;        /* default small size */
+            max-width: 100%;     /* responsive on narrow screens */
+            border-radius: 8px;
+            margin-top: 12px;
+            display: block;
+        }
     </style>
 </head>
 
@@ -176,7 +185,7 @@
         <section id="projects" class="page">
             <h1>Featured Projects 🛠️</h1>
             <div class="card">
-                <h3>01. Personal Portfolio</h3>
+                <h3>01. Image Classification</h3>
                 <p>Image classification project, detects good fruit vs spoiled fruit..</p>
                 <video controls width="100%" style="border-radius:8px; margin-top:12px;">
                     <source src="/aboutme/videos/image-classification.mp4" type="video/mp4">
@@ -188,9 +197,9 @@
             <div class="card">
                 <h3>02. Survey Says Highschool Interview</h3>
                 <p>A survey to capture answers from highschooler for an interview.</p>
-                <video controls width="100%" style="border-radius:8px; margin-top:12px;">
-                    <source src="/aboutme/videos/survey-says.mov" type="video/mp4">
-                    Your browser does not support the video tag. <a href="/aboutme/videos/survey-says.move"
+                <video controls preload="metadata" class="project-video">
+                    <source src="/aboutme/videos/survey-says.mov" type="video/quicktime">
+                    Your browser does not support the video tag. <a href="/aboutme/videos/survey-says.mov"
                         download>Download the video</a>.
                 </video>
                 <small>Tools: Python, JavaScript</small>
