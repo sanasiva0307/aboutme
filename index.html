@@ -152,6 +152,13 @@
             margin-top: 12px;
             display: block;
         }
+
+        /* Specific smaller size for the Survey video only */
+        .survey-video {
+            width: 240px;        /* smaller than default */
+            max-width: 100%;     /* stay responsive on narrow screens */
+            display: block;
+        }
     </style>
 </head>
 
@@ -197,7 +204,7 @@
             <div class="card">
                 <h3>02. Survey Says Highschool Interview</h3>
                 <p>A survey to capture answers from highschooler for an interview.</p>
-                <video controls preload="metadata" class="project-video">
+                <video controls preload="metadata" class="project-video survey-video">
                     <source src="/aboutme/videos/survey-says.mov" type="video/quicktime">
                     Your browser does not support the video tag. <a href="/aboutme/videos/survey-says.mov"
                         download>Download the video</a>.
